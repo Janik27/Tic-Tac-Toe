@@ -6,13 +6,13 @@ def spielfeldausgabe():
     print(spielfeld[4] + "|" + spielfeld[5] + "|" + spielfeld[6])
     print(spielfeld[7] + "|" + spielfeld[8] + "|" + spielfeld[9])
 
-Name1=str(input("Spieler 1 Geben Sie bitte Ihren Name ein: "))
-Name2=str(input("Spieler 2 Geben Sie bitte Ihren Name ein: "))
+Name1=str(input("Spieler 1 geben Sie bitte Ihren Name ein: "))
+Name2=str(input("Spieler 2 eben Sie bitte Ihren Name ein: "))
 
 
 while True :
     spielfeldausgabe()
-    Spieler1 =input( Name1 +" " "Geben Sie eine Zahl ein ") #Spieler 1 gibt eine Zahl ein, die auf dem Spielfeld noch verfügbar ist.
+    Spieler1 =input( Name1 +" " "geben Sie eine Zahl ein ") #Spieler 1 gibt eine Zahl ein, die auf dem Spielfeld noch verfügbar ist.
     for i in spielfeld: #Mit der for Schleife gehe ich die Liste Spielfeld durch und suche damit die Zahl, die der Spieler 1 eingegeben hat.
         if Name1 == i: # Wenn die Zahl von Spieler 1 gleich ist wie i, dann soll die Zahl durch den ausgewählten Buchstabe des Spielers ersetzt werden.
             spielfeld[int(Spieler1)]="X"
@@ -38,7 +38,8 @@ while True :
     if spielfeld[7] == "X" and spielfeld[8] == "X" and spielfeld[9] == "X":
         print("Spieler 2 hat gewonnen")
         break
-# Hier wird geprüft, ob alle Felder mit X oder o belegt sind. Wenn dieser Fall zutrifft, hat keiner gewonnen.
+# Hier wird geprüft, ob alle Felder mit "X" oder "o" belegt sind. Wenn alle Felder belegt sind und keiner 3 gleiche Symbole in
+# in einer Reihe hat, hat keiner gewonnen.
     if (spielfeld[1] == "X" or spielfeld[1] == "o") and\
         (spielfeld[2] == "X" or spielfeld[2] == "o") and\
         (spielfeld[3] == "X" or spielfeld[3] == "o") and\
@@ -51,8 +52,8 @@ while True :
         print("Leider hat keiner gewonnen")
         break
 # Der weitere Code ist für den Spieler 2. Hier wurde der Code des ersten Teils übernommen, da es sich um die gleichen Befehle handelt.
-#Der einzigste Unterschied ist, dass bestimmte Variablen und Bedingungen geändert wurden.
-# Beispielsweise wird das Zeichen "X" , welches für den Spieler 1 eingesetzt wurde, durch das Zeichen´´o´´ausgetauscht sowie die if-Bedingungen angepasst.
+#Der einzige Unterschied ist, dass bestimmte Variablen und Bedingungen geändert wurden.
+# Beispielsweise wird das Zeichen "X" , welches für den Spieler 1 eingesetzt wurde, durch das Zeichen "o" ausgetauscht sowie die if-Bedingungen angepasst.
     spielfeldausgabe()
     Spieler2 = input( Name2 + " ""Wähle bitte eine freie Zahl aus")
     for j in spielfeld:
@@ -80,7 +81,7 @@ while True :
     if spielfeld[7] == "o" and spielfeld[8] == "o" and spielfeld[9] == "o":
         print("Spieler 2 hat gewonnen")
         break
-#
+
     if (spielfeld[1] == "X" or spielfeld[1] == "o") and \
         (spielfeld[2] == "X" or spielfeld[2] == "o") and \
         (spielfeld[3] == "X" or spielfeld[3] == "o") and \
